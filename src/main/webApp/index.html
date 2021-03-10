@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='UTF-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>Integral Database</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <link rel='stylesheet' text='type/css' media='screen' href='main.css'>
+        <script src='main.js'></script>
+        <style>
+            table {
+                border: 2px solid black;
+                border-collapse: separate;
+                border-spacing: 2px 4px; 
+            }
+
+            td, th {
+                border: 1px solid black;
+            }
+        </style>
+    </head>
+    <body>
+    
+        <h1>--- Integral Solutions Book ---<br>
+            Welcome to the Integrals Solution Database.<br>
+            <br>
+            Please select an option below.
+        </h1>
+        <form action="/IDB2-1.0-SNAPSHOT/searchid" method="post">
+            Enter id#:<input type="text" name="number">
+            <input type="submit" value="get integral">
+        </form>
+        <form action="/IDB2-1.0-SNAPSHOT/searchexact" method="post">
+            Enter integral equation:<input type="text" name="number2">
+            <input type="submit" value="get integral">
+        </form>
+        <p><a href="callcalculator">Call calculator for result on Integral choice</a></p>
+        <p><a href="display">Display all integrals</a></p>
+        <p><a href="howtouse">How to use this App</a></p>
+        <p><a href="authorsnotes">Notes about Integrals</a></p>
+        <p> If you would like to calculate an integral directly, <br>
+            fill out the boxes below and click on the button below. <br>
+            You will need to fill out at least the integral id number, <br>
+            lower and upper integrands, and any applicable constants.
+        </p>
+        
+        <form action="/IDB2-1.0-SNAPSHOT/callcalculator" method="post">
+            Integral id:<input type="text" name="integralId"><br>
+            lower integrand:<input type="text" name="lowerIntegrand"><br>
+            upper integrand:<input type="text" name="upperIntegrand"><br>
+            raised to n power (if applicable):<input type="text" name="power"><br>
+            A constant (if applicable):<input type="text" name="constantA"><br>
+            B constant (if applicable):<input type="text" name="constantB"><br>
+            C constant (if applicable):<input type="text" name="constantC"><br>
+            X constant (if applicable):<input type="text" name="constantX"><br>
+            Y constant (if applicable):<input type="text" name="constantY"><br>
+            Z constant (if applicable):<input type="text" name="constantZ"><br>
+            <input type="submit" value="calculate this integral with these values">
+        </form>
+    </body>
+</html>
