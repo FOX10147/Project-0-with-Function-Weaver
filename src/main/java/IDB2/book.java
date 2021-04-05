@@ -95,18 +95,23 @@ public class book {
 
         //Used to add integrals and solutions to database
         else if (choice == 5)
-        {   System.out.println("Make sure to double check the format of your equation before uploading. ");
-            System.out.println("an integer with its solution?");
-            System.out.println("Type [1] to proceed\n");
-            int choice4 = sc.nextInt();
+        {   System.out.println("Process to input new integral locked");
+            System.out.println("Please enter password: ");
+            String password = "database";
+            String userpass = sc.next();
             sc.nextLine();
-            if (choice4 == 1)
-            {   IntegralsDBAccess goTosql = new IntegralsDBAccess();
+            if (userpass.equals(password))
+            {   System.out.println("Password accepted.");
+                System.out.println("Make sure to double check the format of your equation before uploading.\n");
+            
+                IntegralsDBAccess goTosql = new IntegralsDBAccess();
                 goTosql.upload(); 
                 bookStart(); 
             }
             else
-            {   bookStart();    }
+            {   System.out.println("Password not accepted. returning to main menu.");
+                bookStart();
+            }
         }
 
         //Explanation on how best to use app
